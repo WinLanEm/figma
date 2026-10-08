@@ -1,0 +1,8 @@
+.firecrawl/
+.iconsync/logs/
+coverage/
+dist/
+node_modules/
+*.docx
+*.docx:Zone.Identifier
+

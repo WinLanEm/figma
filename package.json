@@ -1,0 +1,49 @@
+{
+  "name": "iconsync",
+  "version": "0.1.0",
+  "private": true,
+  "description": "CLI utility for synchronizing SVG icons from Figma",
+  "type": "module",
+  "bin": {
+    "iconsync": "bin/iconsync.js"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tooling/tsconfig.build.json",
+    "dev": "tsx src/cli/main.ts",
+    "iconsync": "tsx src/cli/main.ts",
+    "format": "prettier --config tooling/prettier.config.mjs --ignore-path .prettierignore --write .",
+    "format:check": "prettier --config tooling/prettier.config.mjs --ignore-path .prettierignore --check .",
+    "lint": "eslint --config tooling/eslint.config.mjs src test --max-warnings=0",
+    "lint:fix": "eslint --config tooling/eslint.config.mjs src test --fix",
+    "typecheck": "tsc -p tooling/tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "docker:build": "docker compose --env-file .env -f infra/docker/compose.yaml build",
+    "docker:help": "docker compose --env-file .env -f infra/docker/compose.yaml run --rm iconsync --help",
+    "check": "npm run format:check && npm run lint && npm run typecheck && npm run test && npm run build"
+  },
+  "engines": {
+    "node": ">=22.21 <27"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^15.0.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.19.1",
+    "eslint": "^10.12.0",
+    "prettier": "^3.9.9",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.71.1",
+    "vitest": "^5.0.3"
+  }
+}

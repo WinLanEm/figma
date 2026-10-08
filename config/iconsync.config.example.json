@@ -1,0 +1,10 @@
+{
+  "source": {
+    "fileKey": "a4NFBn1KhwNuJIxToBYxlp"
+  },
+  "outputDir": "src/assets/icons",
+  "discovery": {
+    "pageNames": ["Icons"],
+    "namePrefixes": ["Icon/"]
+  }
+}

@@ -1,0 +1,33 @@
+# Local planning: задачи ведём в таск-трекере
+docs/BACKLOG.md
+
+# Dependencies and build artifacts
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+
+# Tool caches
+.firecrawl/
+.cache/
+.eslintcache
+.vite/
+.vitest/
+.agents/
+.codex/
+
+# IDE and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*:Zone.Identifier
+
+# Secrets: example stays in Git
+.env
+.env.*
+!.env.example
+
+# Logs and local IconSync runtime data
+*.log
+.iconsync/logs/
